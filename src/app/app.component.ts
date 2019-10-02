@@ -14,6 +14,22 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+    // this.signupForm.setValue({
+    //   userData: {
+    //     username: suggestedName,
+    //     email: ''
+    //   },
+    //   secret: 'pet',
+    //   questionAnswer: '',
+    //   gender: 'female',
+    // });
+    this.signupForm.form.patchValue({
+      userData: {
+        username: suggestedName
+      }
+    })
+    // patchValue: overwrites the field specified, on available on the form level
+    // setValue: overwrites the value for the whole form, available on the ngForm level(signupForm) and form level. 
   }
 
   // onSubmit(form: NgForm) {
